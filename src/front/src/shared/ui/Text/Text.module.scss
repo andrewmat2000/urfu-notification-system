@@ -1,0 +1,27 @@
+.text {
+    font-size: var(--base-font-size);
+
+    &.bold {
+        font-weight: var(--font-weight-bold);
+    }
+
+    &.blue_main {
+        color: var(--blue-main);
+    }
+
+    &.regular {
+        color: var(--black-main);
+    }
+
+    &.error {
+        color: var(--red-dark);
+    }
+
+    &.md {
+        font-size: 16px;
+    }
+
+    &.lg {
+        font-size: 24px;
+    }
+}

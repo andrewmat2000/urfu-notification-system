@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  ocr:
+    image: techblog/ocr-docker:latest
+    ports:
+      - "8080:8080"
+    container_name: tts-stt
+    labels:
+      - "com.ouroboros.enable=true"
+    networks:
+      - default
+    restart: unless-stopped

@@ -1,0 +1,32 @@
+.icons {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: space-between;
+
+    > .button {
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 48px !important;
+        height: 48px;
+
+        font-size: 32px;
+
+        border-radius: 50%;
+
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: var(--gray-20);
+            border-radius: 50%;
+        }
+
+        > i {
+            margin: 0;
+        }
+    }
+}

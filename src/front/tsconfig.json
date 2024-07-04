@@ -1,0 +1,54 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "outDir": "./build/",
+    "isolatedModules": true,
+
+    "noImplicitAny": true,
+    "module": "ESNext",
+
+    "target": "es5",
+    "jsx": "react-jsx",
+
+    "allowJs": true,
+    "moduleResolution": "node",
+
+    "baseUrl": "./src",
+    "paths": {
+      "$config/*": ["../config/*"],
+      "$app/*": ["./app/*"],
+      "$app": ["./app"],
+      "$pages/*": ["./pages/*"],
+      "$pages": ["./pages"],
+      "$widgets/*": ["./widgets/*"],
+      "$widgets": ["./widgets"],
+      "$features": ["./features"],
+      "$features/*": ["./features/*"],
+      "$entities/*": ["./entities/*"],
+      "$entities": ["./entities"],
+      "$shared/*": ["./shared/*"],
+      "$shared": ["./shared"],
+      "$models/*": ["./shared/model/*"],
+      "$models": ["./shared/model"],
+      "$ui/*": ["./shared/ui/*"],
+      "$ui": ["./shared/ui"],
+    },
+
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
+  },
+
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+
+  "include": [
+    "./webpack.config.ts",
+    "./**/config/**/*.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./config/jest/jest.setup.ts"
+  ]
+}

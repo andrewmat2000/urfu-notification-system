@@ -1,0 +1,50 @@
+name: 'urfu-notification-system'
+
+services:
+  ocr:
+    build:
+      context: ocr-docker
+      dockerfile: Dockerfile
+    ports:
+      - 8080
+    container_name: tts-stt
+    networks:
+      - ocr_network
+    restart: unless-stopped
+
+  app:
+    depends_on:
+      - postgres
+    build:
+      dockerfile: Dockerfile.prod
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: pgpass
+      POSTGRES_DB: postgres
+      POSTGRES_HOST: postgres
+      OCR_HOST: http://ocr:8080
+    ports:
+      - 5125:80
+    networks:
+      - postgres_network
+      - ocr_network
+
+  postgres:
+    restart: unless-stopped
+    image: "postgres:12.2"
+    volumes:
+      - postgres_volume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: pgpass
+      POSTGRES_DB: postgres
+    networks:
+      - postgres_network
+
+networks:
+  ocr_network: {}
+  postgres_network: {}
+
+volumes:
+  postgres_volume: {}

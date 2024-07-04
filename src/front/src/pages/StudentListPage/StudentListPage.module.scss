@@ -1,0 +1,8 @@
+.table_head th:not(:nth-child(1)),
+.table_body td:not(:nth-child(1)) {
+    text-align: center;
+}
+
+.table_body > tr:hover {
+    background-color: inherit !important;
+}

@@ -1,0 +1,39 @@
+{
+    "extends": [
+        "stylelint-config-standard-scss",
+        "stylelint-config-recommended-scss",
+        "stylelint-config-recommended",
+        "stylelint-css-modules",
+        "stylelint-prettier/recommended",
+        "stylelint-config-clean-order"
+    ],
+    "plugins": ["stylelint-csstree-validator"],
+    "rules": {
+        "selector-class-pattern": null,
+        "color-function-notation": null,
+        "alpha-value-notation": "number",
+        "selector-pseudo-element-colon-notation": "single",
+        "value-keyword-case": [
+            "lower",
+            {
+                "ignoreKeywords": ["composes", "compose-with"]
+            }
+        ],
+        "property-no-unknown": [
+            true,
+            {
+                "ignoreProperties": ["composes", "compose-with"]
+            }
+        ],
+
+        "block-no-empty": null,
+        "keyframes-name-pattern": null,
+        "property-no-vendor-prefix": null,
+        "rule-empty-line-before": [
+            "always",
+            {
+                "ignore": ["after-comment", "first-nested"]
+            }
+        ]
+    }
+}

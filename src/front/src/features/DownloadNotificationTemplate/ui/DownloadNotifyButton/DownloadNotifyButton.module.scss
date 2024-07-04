@@ -1,0 +1,25 @@
+.button {
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px !important;
+    height: 48px !important;
+
+    font-size: 32px !important;
+
+    border-radius: 50%;
+
+    transition: background-color 0.2s;
+
+    &:hover {
+        background-color: var(--gray-20);
+        border-radius: 50%;
+    }
+
+    > i {
+        margin: 0 !important;
+    }
+}
