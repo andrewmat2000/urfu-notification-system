@@ -1,0 +1,30 @@
+{
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "runArgs": [
+    "--privileged"
+  ],
+  "remoteEnv": {
+    "DEV_SERVER_URL": "http://host.docker.internal:3000",
+    "POSTGRES_USER": "pguser",
+    "POSTGRES_PASSWORD": "pgpass",
+    "POSTGRES_DB": "postgres",
+    "POSTGRES_HOST": "host.docker.internal"
+  },
+  "postAttachCommand": "dotnet restore",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "patcx.vscode-nuget-gallery",
+        "ms-dotnettools.csdevkit",
+        "EditorConfig.EditorConfig",
+        "ms-vscode.vs-keybindings"
+      ],
+      "settings": {
+        "dotnet.server.startTimeout": 120000,
+        "dotnet.defaultSolution": "BackUrfuNotificationSystem.sln"
+      }
+    }
+  }
+}

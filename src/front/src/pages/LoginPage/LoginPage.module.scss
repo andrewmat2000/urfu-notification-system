@@ -1,0 +1,19 @@
+.login_page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login_form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+
+    width: 400px;
+    padding: 16px;
+
+    border: 1px solid var(--blue-20);
+    border-radius: 8px;
+}

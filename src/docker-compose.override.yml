@@ -1,0 +1,8 @@
+
+services:
+  app:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DEV_SERVER_URL=http://host.docker.internal:3000
+    ports:
+      - "80"
